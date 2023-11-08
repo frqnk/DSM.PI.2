@@ -1,8 +1,6 @@
 # Projeto Integrador 2
 
-## Introdução
-
-Um pouco de contexto sobre a ODS 3 da ONU no Brasil:
+## Contexto
 
 > 3\. Saúde e Bem-estar  \
 > Assegurar uma vida saudável e promover o bem-estar para todos, em todas as idades
@@ -50,31 +48,33 @@ Produção e disseminação de conteúdo informativo, ferramentas web e pequenos
 
 ### Casos de uso
 
-- Visitante vê feed de manchetes e acessa artigos
+Importantes:
+
+- Visitante vê feed de notícias e acessa artigos
 - Visitante busca artigos
-- Visitante usa calculadoras de IMC, peso ideal, dieta flexível, macronutrientes, percentual de gordura corporal, período fértil, frequência cardíaca, testes rápidos de audição e sintomas de doenças etc. (não vamos fazer tudo isso, mas é só pra ter uma ideia do que pode ser feito)
-- Visitante joga joguinhos (Flappy Bird, 2048, Pac-man, Dino Run e outros jogos HTML simples modificados)
-- Visitante realiza cadastro e faz login
-- Usuário cadastrado registra placar no ranking
-- Usuário cadastrado realiza cursos e salva progresso
-- Usuário cadastrado interage com postagens (reações) e salva artigos para ler mais tarde
-- Usuário cadastrado recebe notificações (não sei como ainda)
-- Usuário cadastrado acessa comunidade (não sei se não damos conta)
+- Visitante usa calculadoras
+- Visitante entra em contato
 - Administrador posta, edita e apaga artigos
 
-### Inspirações
+A considerar:
 
-Inspiração inicial (meio vaga):  \
-https://tecnoblog.net/
+- Visitante joga joguinhos
+- Visitante realiza cadastro
+- Usuário registra placar no ranking
 
-Jogos HTML simples:  \
-https://thorium.rocks/games/
+### Atividades
 
-Inpiração voltada ao tema e com algumas calculadoras:  \
-https://www.tuasaude.com/
-
-Site com mais algumas calculadoras:  \
-https://gorgonoid.com/
-
-Campanha de conscientização de sucesso baseada em jogos:  \
-https://www.dumbwaystodie.com/
+- Modelagem
+    - Estrutura de páginas
+    - Diagramas
+    - Documentação
+    - Roteiro de apresentação
+- Design
+    - Logos
+    - Cores
+    - Slides
+- Frontend
+    - HTML, CSS, Bootstrap
+- Backend
+    - PHP
+    - SQL
