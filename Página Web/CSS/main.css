@@ -1,0 +1,61 @@
+/* Formatação do site */
+html, body {
+    padding: 0;
+    margin: 0;
+    letter-spacing: -0.4px;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f0f0f0;
+}
+
+.sans {
+    font-family: sans-serif;
+}
+
+.grow-up {
+    transition: 0.2s ease-in-out;
+}
+
+.grow-up:hover {
+    transform: scale(1.05);
+    color: mediumspringgreen;
+}
+
+.moldura-estatica, .moldura {
+    background: none;
+    margin: 0 auto;
+    transition: 0.2s ease-in-out;
+}
+
+.moldura {
+    border: 2px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #1111112c;
+}
+
+.moldura:hover {
+    box-shadow: 0 0 10px #1111116d;
+    background: white;
+    border: none;
+    transform: scale(1.01);
+}
+
+.moldura-estatica {
+    display: flexbox;
+    margin-bottom: 10px;
+}
+
+.linha-titulo {
+    border-bottom: 2px solid gray;
+}
+
+footer {
+    bottom: 0;
+}
