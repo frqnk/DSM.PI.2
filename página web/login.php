@@ -1,7 +1,10 @@
 <?php
-  session_start();
-  if (!$_SESSION['loggedin'] or !isset($_SESSION['loggedin'])) {
-    header("location: index.php");
-    exit;
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
+    if ($_POST['usuario'] == 'devghost' and $_POST['senha'] == 'coffee') {
+      $_SESSION['loggedin'] = true;
+      header('location: painel_de_controle.php');
+    }
+    else $_SESSION['loggedin'] = false;
   }
 ?>
