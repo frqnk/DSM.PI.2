@@ -69,7 +69,7 @@ Produção e disseminação de conteúdo informativo, ferramentas web e pequenos
 #### Administrador
 
 - Realizar login
-- Cadastrar redator
+- Cadastrar redator ou administrador
 - Publicar artigo
 - Atualizar qualquer artigo
 - Excluir qualquer artigo
