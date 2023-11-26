@@ -1,6 +1,6 @@
 # Projeto Integrador 2
 
-## Grupo 4
+## Grupo 5
 
 - [Bruno Alves dos Anjos](https://github.com/Brubzie)
 - [Frank Lima Schlemmermeyer](https://github.com/frqnk)
