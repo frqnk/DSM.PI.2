@@ -1,0 +1,102 @@
+/* Formatação do site */
+html, body {
+    padding: 0;
+    margin: 0;
+    letter-spacing: -0.4px;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: whitesmoke;
+    /* Personalização da Barra de Rolagem */
+    scrollbar-color: #cccccc #f0f0f0;
+    scrollbar-width: thin;
+}
+
+body:hover {
+    scrollbar-color: rgb(127, 125, 125);
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(127, 125, 125);
+}
+
+.sans {
+    font-family: sans-serif;
+}
+
+.TecnoBroccoli {
+    color: mediumseagreen;
+}
+
+.grow-up {
+    transition: 0.2s ease-in-out;
+}
+
+.grow-up:hover {
+    transform: scale(1.05);
+    color: mediumspringgreen;
+}
+
+.moldura-estatica, .moldura {
+    opacity: 98%;
+    background: none;
+    margin: 0 auto;
+    transition: 0.2s ease-in-out;
+}
+
+.moldura:hover, .moldura-estatica:hover {
+    opacity: 100%;
+}
+
+.moldura {
+    border: 2px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #1111112c;
+}
+
+.moldura:hover {
+    box-shadow: 0 0 10px #1111116d;
+    background: white;
+}
+
+.moldura-estatica {
+    display: flexbox;
+    margin-bottom: 10px;
+}
+
+.linha-titulo {
+    border-bottom: 2px solid gray;
+    position: relative;
+}
+
+.bottom-line {
+    border-bottom: none;
+    transition: 0.2s ease-in-out;
+}
+
+.bottom-line:hover {
+    border-bottom: 2px solid white;
+}
+
+.social-media {
+    opacity: 40%;
+    transition: 0.3s ease-in-out;
+}
+
+.social-media:hover {
+    opacity: 100%;
+    transform: scale(1.3) rotate(360deg);
+}
+
+footer {
+    bottom: 0;
+}
