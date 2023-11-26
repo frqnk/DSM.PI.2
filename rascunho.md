@@ -56,7 +56,7 @@ Produção e disseminação de conteúdo informativo, ferramentas web e pequenos
     - (ext.) Pesquisar artigos (?)
 - Usar calculadoras
     - (ext.) Calcular IMC
-- Entrar em contato (?)
+- Entrar em contato
     - (inc.) Registrar mensagem e informações de contato
 
 #### Redator
@@ -76,5 +76,8 @@ Produção e disseminação de conteúdo informativo, ferramentas web e pequenos
 
 ### Classes
 
+[...]
+
 ### Sequências
 
+[...]
