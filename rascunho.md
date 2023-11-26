@@ -48,33 +48,33 @@ Produção e disseminação de conteúdo informativo, ferramentas web e pequenos
 
 ### Casos de uso
 
-Importantes:
+#### Visitante
 
-- Visitante vê feed de notícias e acessa artigos
-- Visitante busca artigos
-- Visitante usa calculadoras
-- Visitante entra em contato
-- Administrador posta, edita e apaga artigos
+- Ver feed de notícias
+    - (ext.) Acessar artigos
+    - (ext.) Filtrar artigos por tags
+    - (ext.) Pesquisar artigos (?)
+- Usar calculadoras
+    - (ext.) Calcular IMC
+- Entrar em contato (?)
+    - (inc.) Registrar mensagem e informações de contato
 
-A considerar:
+#### Redator
 
-- Visitante joga joguinhos
-- Visitante realiza cadastro
-- Usuário registra placar no ranking
+- Realizar login
+- Publicar artigo
+- Atualizar os próprios artigos
+- Excluir os próprios artigos
 
-### Atividades
+#### Administrador
 
-- Modelagem
-    - Estrutura de páginas
-    - Diagramas
-    - Documentação
-    - Roteiro de apresentação
-- Design
-    - Logos
-    - Cores
-    - Slides
-- Frontend
-    - HTML, CSS, Bootstrap
-- Backend
-    - PHP
-    - SQL
+- Realizar login
+- Cadastrar redator
+- Publicar artigo
+- Atualizar qualquer artigo
+- Excluir qualquer artigo
+
+### Classes
+
+### Sequências
+
