@@ -1,0 +1,153 @@
+/* Formatação do site */
+html, body {
+    padding: 0;
+    margin: 0;
+    letter-spacing: -0.4px;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: whitesmoke;
+    /* Personalização da Barra de Rolagem */
+    scrollbar-color: #cccccc #f0f0f0;
+    scrollbar-width: thin;
+}
+
+body:hover {
+    scrollbar-color: rgb(127, 125, 125);
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(127, 125, 125);
+}
+
+.btn-custom {
+    transition: 0.1s ease-in-out;
+    margin-top: 20px;
+}
+
+.btn-custom:hover {
+    transform: scale(1.05);
+}
+
+.TecnoBroccoli {
+    color: mediumseagreen;
+    font-family: monospace;
+}
+
+.DevGhost {
+    transition: 0.1s ease;
+}
+
+.DevGhost:hover {
+    color: rgb(0, 150, 150);
+}
+
+.ghost {
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.ghost:hover {
+    opacity: 100%;
+}
+
+.grow-up {
+    transition: 0.2s ease-in-out;
+}
+
+.grow-up:hover {
+    transform: scale(1.05);
+    color: mediumspringgreen;
+}
+
+.moldura:hover {
+    opacity: 100%;
+}
+
+.moldura {
+    opacity: 98%;
+    background: none;
+    margin: 0 auto;
+    transition: 0.2s ease-in-out;
+    border: 2px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #1111112c;
+}
+
+.moldura:hover {
+    box-shadow: 0 0 10px #1111116d;
+    background: white;
+}
+
+.linha-titulo {
+    border-bottom: 2px solid gray;
+    position: relative;
+}
+
+.bottom-line {
+    border-bottom: none;
+    transition: 0.2s ease-in-out;
+}
+
+.bottom-line:hover {
+    border-bottom: 2px solid white;
+}
+
+.social-media {
+    opacity: 40%;
+    transition: 0.3s ease-in-out;
+}
+
+.social-media:hover {
+    opacity: 100%;
+    transform: scale(1.1);
+}
+
+.carousel-inner {
+    width: 100%;
+    max-height: 100vh;
+    position: relative;
+}
+
+.carousel-item {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    bottom: 0;
+}
+
+.jumbotron {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.welcome-section {
+    height: 100vh;
+    background-image: url('../img/slide1.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex: 1;
+}
