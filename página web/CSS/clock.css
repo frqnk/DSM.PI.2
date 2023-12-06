@@ -1,0 +1,21 @@
+.clock {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    opacity: 40%;
+    transition: 0.2s ease-in-out;
+    background: none;
+    padding: 5px;
+    border: none;
+    border-radius: 20%;
+}
+
+.clock:hover {
+    opacity: 90%;
+    background: #111;
+    color: antiquewhite;
+}
