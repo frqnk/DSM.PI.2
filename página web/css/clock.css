@@ -1,0 +1,35 @@
+.clock-wrapper {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+}
+
+.clock {
+    font-weight: 400;
+    color: #333;
+    opacity: 40%;
+    transition: 0.2s ease-in-out;
+    background: none;
+    padding: 5px;
+    border: none;
+    border-radius: 20%;
+}
+
+/* Ícone de Dia/Noite */
+#dayNightIcon {
+    font-size: 20px;
+    color: #333;
+    opacity: 40%;
+    transition: 0.2s ease-in-out;
+}
+
+.clock-wrapper:hover .clock,
+.clock-wrapper:hover #dayNightIcon {
+    opacity: 90%;
+    background: #111;
+    color: white;
+}
