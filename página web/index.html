@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -12,6 +17,7 @@
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/clock.css">
+    <link rel="stylesheet" href="CSS/feed.css">
 
     <!-- favicon -->
     <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
@@ -23,9 +29,9 @@
   <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top p-3"data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top p-3" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand grow-up" href="mainPage.html" target="_self">🥦Tecnobroccoli</a>
+        <a class="navbar-brand grow-up" href="index.php" target="_self"><img class="img-fluid" src="img/logo/logo_PI_32x32.webp" alt="Logo Tecnobroccoli"> Tecnobroccoli</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,8 +41,8 @@
               <a class="nav-link active grow-up" aria-current="page" href="#home" target="_self">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active grow-up" href="sobre.html" target="_self">Sobre</a>
-            </li>
+              <a class="nav-link active grow-up" href="sobre.php" target="_self">Sobre</a>
+            </li>           
             <li class="nav-item dropdown active grow-up">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
                 Colaboradores do GitHub
@@ -51,15 +57,26 @@
                   <li><a class="dropdown-item" href="https://github.com/" target="_blank">Miguel Barbieri</a></li>
               </ul>
             </li>
-            <!-- Login -->
-            <li class="nav-item">
-              <a href="login.html" target="_self" class="nav-link active grow-up">Login</a>
-            </li>
+            <?php if($_SESSION["loggedin"] ?? false):?>
+              <li class="nav-item">
+                <a href="logout.php" target="_self" class="nav-link active grow-up">Logout</a>
+              </li>
+              <?php else: ?>
+              <li class="nav-item">
+                <a href="login.php" target="_self" class="nav-link active grow-up">Login</a>
+              </li>
+              <?php endif ?>
           </ul>
         </div>
+        <!-- Search -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+        </form>
+        <!-- Search - End -->
       </div>
     </nav>
-    <!-- Fim Navbar -->
+    <!-- Navbar - End -->
 
     <!-- Boas-vindas -->
     <div class="jumbotron welcome-section text-light mt-5 mb-5">
@@ -67,52 +84,41 @@
         <div class="mx-auto">
           <h1 class="display-4">Bem-Vindo à <span class="Tecnobroccoli">Tecnobroccoli</span></h1>
           <p class="lead">Uma plataforma dedicada à te deixar sempre atualizado sobre sua saúde e bem-estar, físico e mental.</p>
-          <a class="btn btn-outline-light border-0 btn-lg btn-custom rounded-pill font-monospace letterspace-grow" href="#inicio">Explore nosso conteúdo!</a>
+          <div class="justify-content-between m-auto p-0">
+            <a class="btn btn-outline-light border-0 btn-lg btn-custom rounded-pill font-monospace letterspace-grow" href="#inicio">Conhecendo a Tecnobroccoli</a>
+            <br clear="all">
+            <a class="btn btn-outline-light border-0 btn-lg btn-custom rounded-pill font-monospace letterspace-grow" href="#feed">Explore nosso conteúdo!</a>
+          </div>
         </div>
       </div>
     </div>
     <!-- Fim das Boas-vindas -->
-
-    <div class="container-fluid">
-      <div class="row justify-content-around">
-        <!-- Card 01 -->
-        <div class="col-md-5 moldura" id="inicio">
-          <div class="card" style="max-width: 540px;">
-            
-          </div>
-
-          <!-- Texto Abaixo -->
-          <h1>H1</h1>
-        </div>
-        <div class="col-md-5 moldura">
-          <h1 class="text-center">Hello</h1>
-        </div>
-      </div>
-    </div>
+   
 
     <div class="container-fluid mt-3">
       <div class="row justify-content-around">
         <!-- Card 03 -->
-        <div class="col-sm-4 mb-3">
-          <div class="card" style="width: 18rem;">
-            <img src="img/medicos.jpg" class="card-img-top" alt="Médicos">
+        <div class="col-lg-6 mb-3">
+          <div class="card">
+            <img src="img/medicos.jpg" class="card-img-top" alt="Nossa equipe" title="Profissionais da saúde">
             <div class="card-body">
-              <h4 class="card-title">Nossos Especialistas</h4>
-              <p class="card-text fw-normal">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-success rounded-pill">Saiba mais</a>
+              <h4 class="card-title lead">Nossos Especialistas</h4>
+              <p class="card-text fw-normal">O site <span class="Tecnobroccoli">Tecnobroccoli</span> terá o privilégio de contar com a colaboração de uma equipe de especialistas em saúde, composta por médicos, psicólogos e outros profissionais da área da saúde. Esses especialistas irão compartilhar seus conhecimentos e experiências em publicações que abordarão temas relevantes e atuais relacionados à saúde e ao bem-estar. A equipe multiprofissional de saúde é formada por um grupo de profissionais de saúde que trabalham em conjunto com o objetivo de promover a recuperação mais rápida e efetiva do paciente. A equipe multiprofissional pode ser constituída por diferentes profissionais de saúde, como médicos, enfermeiros, nutricionistas, psicólogos e fisioterapeutas, por exemplo, podendo a formação da equipe variar de acordo com o objetivo a ser alcançado. É fundamental que a equipe multiprofissional trabalhe em conjunto e sempre se comunicando, pois assim é possível promover a qualidade de vida do paciente.
+              </p>
+              <!-- <a href="#" target="_blank" class="btn btn-success rounded-pill">Saiba mais</a> -->
             </div>
           </div>
         </div>
         <!-- Card 03 - End -->
         
         <!-- Card 04 -->
-        <div class="col-sm-4">
-          <div class="card" style="width: 18rem;">
-            <img src="img/adm.jpg" class="card-img-top" alt="Administradores da Página">
+        <div class="col-lg-6 mb-3">
+          <div class="card">
+            <img src="img/adm.jpg" class="card-img-top" alt="Administradores da Página" title="Administradores da Página">
             <div class="card-body">
-              <h4 class="card-title">Administração da página</h4>
-              <p class="card-text fw-normal">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-success rounded-pill">Saiba mais</a>
+              <h4 class="card-title lead">Administração da página</h4>
+              <p class="card-text fw-normal">Bem-vindo ao Centro de Inovação <span class="Tecnobroccoli">Tecnobroccoli!</span> Aqui, nossa equipe de administradores dedica-se à junção única entre tecnologia e bem-estar. Estamos comprometidos em criar conteúdo inovador, manter uma comunidade digital vibrante e oferecer informações valiosas. Explore nosso universo digital e descubra como a Administração da Página molda a Tecnobroccoli, proporcionando uma experiência que nutre tanto a mente quanto a tecnologia. Estamos aqui para inspirar, informar e inovar.</p>
+              <!-- <a href="#" class="btn btn-success rounded-pill">Saiba mais</a> -->
             </div>
           </div>
         </div>
@@ -121,7 +127,7 @@
     </div>
     
     <!-- Carousel -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-theme="dark">
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-theme="dark">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -154,8 +160,64 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Próximo</span>
       </button>
-    </div>
+    </div> -->
     <!-- Carousel - End -->
+
+    <br clear="all">
+
+    <hr class="border border-sucess border-2 opacity-75">
+
+    <!-- Feed -->
+    <div class="container" id="feed">
+      <div class="row">
+        <h1 class="lead display-4 text-center bg-secondary text-light border-0 rounded-2" style="font-family: sans-serif;">Feed</h1>
+        <!-- Post 01 -->
+        <div class="post">
+          <div class="user">
+            <h2><img class="perfilImg" src="img/feed/user1.png" alt="imagem de perfil">Alexandra Magalhães</h2>
+            <div class="userText">
+              <h3 class="lead">Dicas de:</h3>
+              <p class="fw-normal">
+                Hidratação, alimentação e proteção solar. O verão é uma estação do ano que muitas pessoas adoram, pois é sinônimo de férias, praia, piscina e diversão.
+                No entanto, também é uma época que exige alguns cuidados especiais com a saúde, pois as altas temperaturas,
+                a exposição ao sol e a transpiração podem causar desidratação, queimaduras, insolação e outros problemas. Por
+                isso, é importante seguir algumas dicas para se manter saudável no verão e aproveitar ao máximo essa estação.
+                Veja a seguir:
+                Hidratação
+                A hidratação é fundamental para o bom funcionamento do organismo, pois ajuda a regular a temperatura
+                corporal, a eliminar toxinas, a transportar nutrientes e a prevenir infecções. No verão, a necessidade de água
+                aumenta, pois perdemos mais líquidos e sais minerais através do suor. Por isso, é recomendado beber pelo
+                menos 2 litros de água por dia, ou mais, dependendo da atividade física e do clima. Além da água, também é
+                possível se hidratar com sucos naturais, água de coco, chás gelados e frutas ricas em água, como melancia,
+                melão, abacaxi e laranja.
+              </p>
+            </div>
+          </div>
+      </div>
+      <!-- Post 02 -->
+      <div class="post">
+          <div class="user">
+            <h2><img class="perfilImg" src="img/feed/user2.png" alt="imagem de perfil">Alice Bertran</h2>
+            <p>Este é outro post de exemplo no feed da rede social.</p>
+          </div>
+      </div>
+      <!-- Post 03 -->
+      <div class="post">
+        <div class="user">
+          <h2><img class="perfilImg" src="img/feed/user3.png" alt="imagem de perfil">Pedro Alves</h2>
+          <p>Este é outro post de exemplo no feed da rede social.</p>
+        </div>
+    </div>
+    <!-- Post 04 -->
+    <div class="post">
+      <div class="user">
+        <h2><img class="perfilImg" src="img/feed/user4.png" alt="imagem de perfil">Brenda Lima</h2>
+        <p>Este é outro post de exemplo no feed da rede social.</p>
+      </div>
+    </div>
+      </div>
+    </div>
+    <!-- Feed - End -->
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white mt-5">
@@ -196,21 +258,21 @@
       <!-- Grid container -->
 
       <!-- Copyright -->
-      <div class="text-center p-1 rounded-1" style="background-color: rgba(0, 0, 0, 0.2); font-family: monospace">
+      <div class="text-center p-1 rounded-1" style="background-color: rgba(0, 0, 0, 0.2); font-family: Arial, Helvetica, sans-serif;">
         <i>&COPY;2023 Copyright:<a class="DevGhost" href="https://github.com/frqnk/DSM.PI.2" target="_blank">DevGhost, Inc</i><span class="ghost">👻</span></a>
       </div>
       <!-- Copyright - End -->
     </footer>
     <!-- Footer - End -->
 
-  <!-- Relógio Wrapper -->
-  <div class="clock-wrapper">
-    <!-- Relógio -->
-    <div class="clock" id="clock"></div>
-    
-    <!-- Ícone de Dia/Noite -->
-    <div id="dayNightIcon">☀️</div>
-  </div>
+    <!-- Relógio Wrapper -->
+    <div class="clock-wrapper">
+      <!-- Relógio -->
+      <div class="clock" id="clock"></div>
+      
+      <!-- Ícone de Dia/Noite -->
+      <div id="dayNightIcon">☀️</div>
+    </div>
 
     <!-- JavaScript Bootstrap v5.3 -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

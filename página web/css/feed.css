@@ -9,29 +9,25 @@
     margin: 0;
 }
 
-.post p {
-    margin: 5px 0;
-}
-
 .user {
     align-items: baseline;
 }
 
 .perfilImg {
-    width: 50px; /* Ajuste o tamanho conforme necessário */
-    height: 50px; /* Ajuste o tamanho conforme necessário */
+    width: 50px;
+    height: 50px;
     border-radius: 50%; /* Para tornar a imagem circular */
     object-fit: cover; /* Para manter a proporção da imagem */
     margin-right: 10px; /* Adapte a margem conforme necessário */
-    border: 2px solid #fff; /* Adicione uma borda branca */
+    border: 2px solid green;
 }
 
 .user h2 {
     margin-bottom: 20px;
 }
 
-.user p {
-    max-width: 500px;
+.userText {
+    max-width: 80vw;
     background: #cccccc42;
     padding: 5px;
     border: none;

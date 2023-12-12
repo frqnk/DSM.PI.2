@@ -1,3 +1,13 @@
+<?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
+    if ($_POST['usuario'] == 'devghost@gmail.com' and $_POST['senha'] == '123456'){
+      $_SESSION['loggedin'] = true;
+      header('location: index.php');
+    }
+    else $_SESSION['loggedin'] = false;
+  }
+?>
 <!doctype html>
 <html lang="pt-br" data-bs-theme="dark">
   <head>
@@ -21,16 +31,17 @@
   </head>
   <body class="d-flex align-items-center py-4 login-bg">
 
+
     <main class="w-100 m-auto form-container bg-body-tertiary border-0 rounded-2 d-flex flex-column align-items-center">
-      <form id="loginForm" class="w-100">
+      <form id="loginForm" method="POST" class="w-100">
         <a href="index.php" target="_self"><img src="img/logo/logo_PI_32x32.webp" alt="logo Tecnobroccoli" class="mb-4"></a>
         <h1 class="h3 mb-3 fw-normal">Login</h1>
         <div class="form-floating mb-1">
-          <input type="email" class="form-control" id="floatingInput" placeholder="your-email@gmail.com">
+          <input type="email" name="usuario" class="form-control" id="floatingInput" placeholder="your-email@gmail.com">
           <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating mb-1">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="password">
+          <input type="password" name="senha" class="form-control" id="floatingPassword" placeholder="password">
           <label for="floatingPassword">Senha</label>
         </div>
         <div class="form-check text-start my-3">
@@ -38,7 +49,7 @@
           <label class="form-check-label" for="flexCheckDefault">Lembre de mim</label>
         </div>
         <button class="btn btn-primary w-100 py-2" type="submit">Entrar</button>
-        <button class="btn btn-primary w-100 py-2" type="button" onclick="showSignupForm()">Não tenho uma conta</button>
+        <button class="btn btn-primary w-100 py-2 mt-2" type="button" onclick="showSignupForm()">Não tenho uma conta</button>
       </form>
 
       <form id="signupForm" class="w-100" style="display: none;">
@@ -61,7 +72,7 @@
           <label class="form-check-label" for="flexCheckDefault">Lembre de mim</label>
         </div>
         <button class="btn btn-primary w-100 py-2" type="button" onclick="showLoginForm()">Já tenho uma conta</button>
-        <button class="btn btn-primary w-100 py-2" type="button" onclick="showSignupForm()">Criar conta</button>
+        <button class="btn btn-primary w-100 py-2 mt-2" type="button" onclick="showSignupForm()">Criar conta</button>
       </form>
 
       <div class="text-center p-1" style="font-family: Arial, Helvetica, sans-serif;">
@@ -130,13 +141,3 @@
   </body>
 </html>
 
-<?php
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    session_start();
-    if ($_POST['usuario'] == 'devghost' and $_POST['senha'] == 'coffee') {
-      $_SESSION['loggedin'] = true;
-      header('location: painel_de_controle.php');
-    }
-    else $_SESSION['loggedin'] = false;
-  }
-?>
