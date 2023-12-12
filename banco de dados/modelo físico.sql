@@ -39,7 +39,7 @@ DELIMITER ;
 --
 
 CREATE TABLE `administrador` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(50) DEFAULT NULL,
   `senha` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -51,7 +51,7 @@ CREATE TABLE `administrador` (
 --
 
 CREATE TABLE `artigo` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `nomeRedator` varchar(50) DEFAULT NULL,
   `nomeArtigo` varchar(100) DEFAULT NULL,
   `dataPublicacao` date DEFAULT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE `artigo` (
 --
 
 CREATE TABLE `mostrarartigo` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `FK_redator_ID` int(11) DEFAULT NULL,
   `FK_administrador_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -78,7 +78,7 @@ CREATE TABLE `mostrarartigo` (
 --
 
 CREATE TABLE `redator` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `senha` varchar(50) DEFAULT NULL,
   `login` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
