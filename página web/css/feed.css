@@ -1,0 +1,39 @@
+.post {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.post h2 {
+    margin: 0;
+}
+
+.post p {
+    margin: 5px 0;
+}
+
+.user {
+    align-items: baseline;
+}
+
+.perfilImg {
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 50%; /* Para tornar a imagem circular */
+    object-fit: cover; /* Para manter a proporção da imagem */
+    margin-right: 10px; /* Adapte a margem conforme necessário */
+    border: 2px solid #fff; /* Adicione uma borda branca */
+}
+
+.user h2 {
+    margin-bottom: 20px;
+}
+
+.user p {
+    max-width: 500px;
+    background: #cccccc42;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}

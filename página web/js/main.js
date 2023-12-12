@@ -41,19 +41,5 @@ updateClock();
 
 // Ativação do carrossel
 $('#meuCarousel').carousel({
-    interval: 5000 // Transição em milissegundos
+    interval: 5000 // Transição em milissegundos de forma automática do carousel
 });
-
-// Função para verificar a rolagem da página e exibir/ocultar o footer
-window.onscroll = function() {
-    const footer = document.getElementById("footer");
-    const rect = footer.getBoundingClientRect();
-
-    // Se o rodapé estiver visível na janela de visualização
-    if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        footer.style.bottom = "0";
-    } else {
-        footer.style.bottom = "-100px";
-        footer.style.display = "none";
-    }
-};

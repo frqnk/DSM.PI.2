@@ -30,6 +30,4 @@
 .clock-wrapper:hover .clock,
 .clock-wrapper:hover #dayNightIcon {
     opacity: 90%;
-    background: #111;
-    color: white;
 }
