@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -26,7 +31,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top p-3" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand grow-up" href="index.php" target="_self">🥦Tecnobroccoli</a>
+        <a class="navbar-brand grow-up" href="index.php" target="_self"><img class="img-fluid" src="img/logo/logo_PI_32x32.webp" alt="Logo Tecnobroccoli"> Tecnobroccoli</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,11 +42,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link active grow-up" href="sobre.php" target="_self">Sobre</a>
-            </li>
-            <!-- Login -->
-            <li class="nav-item">
-              <a href="login.php" target="_self" class="nav-link active grow-up">Login</a>
-            </li>
+            </li>           
             <li class="nav-item dropdown active grow-up">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
                 Colaboradores do GitHub
@@ -56,6 +57,15 @@
                   <li><a class="dropdown-item" href="https://github.com/" target="_blank">Miguel Barbieri</a></li>
               </ul>
             </li>
+            <?php if($_SESSION["loggedin"] ?? false):?>
+              <li class="nav-item">
+                <a href="logout.php" target="_self" class="nav-link active grow-up">Logout</a>
+              </li>
+              <?php else: ?>
+              <li class="nav-item">
+                <a href="login.php" target="_self" class="nav-link active grow-up">Login</a>
+              </li>
+              <?php endif ?>
           </ul>
         </div>
         <!-- Search -->
@@ -83,29 +93,13 @@
       </div>
     </div>
     <!-- Fim das Boas-vindas -->
-
-    <div class="container-fluid">
-      <div class="row justify-content-around">
-        <!-- Card 01 -->
-        <div class="col-md-5 moldura" id="inicio">
-          <div class="card" style="max-width: 540px;">
-
-          </div>
-
-          <!-- Texto Abaixo -->
-          <h1>H1</h1>
-        </div>
-        <div class="col-md-5 moldura">
-          <h1 class="text-center">Hello</h1>
-        </div>
-      </div>
-    </div>
+   
 
     <div class="container-fluid mt-3">
       <div class="row justify-content-around">
         <!-- Card 03 -->
-        <div class="col-lg-4 mb-3">
-          <div class="card" style="width: 40vw;">
+        <div class="col-lg-6 mb-3">
+          <div class="card">
             <img src="img/medicos.jpg" class="card-img-top" alt="Nossa equipe" title="Profissionais da saúde">
             <div class="card-body">
               <h4 class="card-title lead">Nossos Especialistas</h4>
@@ -118,8 +112,8 @@
         <!-- Card 03 - End -->
         
         <!-- Card 04 -->
-        <div class="col-lg-4 mb-3">
-          <div class="card" style="width: 40vw;">
+        <div class="col-lg-6 mb-3">
+          <div class="card">
             <img src="img/adm.jpg" class="card-img-top" alt="Administradores da Página" title="Administradores da Página">
             <div class="card-body">
               <h4 class="card-title lead">Administração da página</h4>
@@ -171,23 +165,77 @@
 
     <br clear="all">
 
-    <hr>
+    <hr class="border border-sucess border-2 opacity-75">
 
     <!-- Feed -->
-    <div class="container-md">
+    <div class="container" id="feed">
       <div class="row">
-        <h1 class="lead display-4 text-center bg-success text-dark border-0 rounded-2" style="font-family: sans-serif;">Feed</h1>
+        <h1 class="lead display-4 text-center bg-secondary text-light border-0 rounded-2" style="font-family: sans-serif;">Feed</h1>
+        <!-- Carousel -->
+        <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-theme="dark">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/SLIDE1.jpg" class="d-block w-100 carousel-img" alt="Primeiro Slide">
+            </div>
+            <div class="carousel-item">
+              <img src="img/SLIDE2.jpg" class="d-block w-100 carousel-img" alt="Segundo Slide">
+            </div>
+            <div class="carousel-item">
+              <img src="img/SLIDE3.jpg" class="d-block w-100 carousel-img" alt="Terceiro Slide">
+            </div>
+            <div class="carousel-item">
+              <img src="img/SLIDE4.jpg" class="d-block w-100 carousel-img" alt="Quarto Slide">
+            </div>
+            <div class="carousel-item">
+              <img src="img/SLIDE5.jpg" class="d-block w-100 carousel-img" alt="Quinto Slide">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" title="Anterior" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" title="Próximo" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
+        </div> -->
+        <!-- Carousel - End -->
         <!-- Post 01 -->
         <div class="post">
           <div class="user">
             <h2><img class="perfilImg" src="img/feed/user1.png" alt="imagem de perfil">Alexandra Magalhães</h2>
-            <p>Este é um post de exemplo no feed da rede social.</p>
+            <figcaption class="text-dark-emphasis fw-lighter ms-2">Médica</figcaption>
+            <div class="userText">
+              <h3 class="h4">Dicas de:</h3>
+              <p class="fw-normal">
+                Hidratação, alimentação e proteção solar. O verão é uma estação do ano que muitas pessoas adoram, pois é sinônimo de férias, praia, piscina e diversão.
+                No entanto, também é uma época que exige alguns cuidados especiais com a saúde, pois as altas temperaturas,
+                a exposição ao sol e a transpiração podem causar desidratação, queimaduras, insolação e outros problemas. Por
+                isso, é importante seguir algumas dicas para se manter saudável no verão e aproveitar ao máximo essa estação.
+                Veja a seguir:
+                <h4 class="h5">Hidratação</h4>
+                A hidratação é fundamental para o bom funcionamento do organismo, pois ajuda a regular a temperatura
+                corporal, a eliminar toxinas, a transportar nutrientes e a prevenir infecções. No verão, a necessidade de água
+                aumenta, pois perdemos mais líquidos e sais minerais através do suor. Por isso, é recomendado beber pelo
+                menos 2 litros de água por dia, ou mais, dependendo da atividade física e do clima. Além da água, também é
+                possível se hidratar com sucos naturais, água de coco, chás gelados e frutas ricas em água, como melancia,
+                melão, abacaxi e laranja.
+              </p>
+            </div>
           </div>
       </div>
       <!-- Post 02 -->
       <div class="post">
           <div class="user">
             <h2><img class="perfilImg" src="img/feed/user2.png" alt="imagem de perfil">Alice Bertran</h2>
+            <figcaption class="text-dark-emphasis fw-lighter ms-2">Médica</figcaption>
             <p>Este é outro post de exemplo no feed da rede social.</p>
           </div>
       </div>
@@ -195,6 +243,7 @@
       <div class="post">
         <div class="user">
           <h2><img class="perfilImg" src="img/feed/user3.png" alt="imagem de perfil">Pedro Alves</h2>
+          <figcaption class="text-dark-emphasis fw-lighter ms-2">Auxiliar de Enfermagem</figcaption>
           <p>Este é outro post de exemplo no feed da rede social.</p>
         </div>
     </div>
@@ -202,6 +251,7 @@
     <div class="post">
       <div class="user">
         <h2><img class="perfilImg" src="img/feed/user4.png" alt="imagem de perfil">Brenda Lima</h2>
+        <figcaption class="text-dark-emphasis fw-lighter ms-2">Enfermeira</figcaption>
         <p>Este é outro post de exemplo no feed da rede social.</p>
       </div>
     </div>

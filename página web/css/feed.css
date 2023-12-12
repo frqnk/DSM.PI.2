@@ -20,10 +20,12 @@
     object-fit: cover; /* Para manter a proporção da imagem */
     margin-right: 10px; /* Adapte a margem conforme necessário */
     border: 2px solid green;
+    transition: 0.2s ease-in-out;
 }
 
-.user h2 {
-    margin-bottom: 20px;
+.perfilImg:hover {
+    transform: scale(1.2);
+    transition-delay: 0.2s;
 }
 
 .userText {
@@ -32,4 +34,17 @@
     padding: 5px;
     border: none;
     border-radius: 5px;
+}
+
+.carousel-item {
+    max-width: 80vw;
+    max-height: 300px;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .carousel-item img {
+    max-height: 300px;
+    width: auto;
 }
