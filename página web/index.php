@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -37,11 +42,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link active grow-up" href="sobre.php" target="_self">Sobre</a>
-            </li>
-            <!-- Login -->
-            <li class="nav-item">
-              <a href="login.php" target="_self" class="nav-link active grow-up">Login</a>
-            </li>
+            </li>           
             <li class="nav-item dropdown active grow-up">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
                 Colaboradores do GitHub
@@ -56,6 +57,15 @@
                   <li><a class="dropdown-item" href="https://github.com/" target="_blank">Miguel Barbieri</a></li>
               </ul>
             </li>
+            <?php if($_SESSION["loggedin"] ?? false):?>
+              <li class="nav-item">
+                <a href="logout.php" target="_self" class="nav-link active grow-up">Logout</a>
+              </li>
+              <?php else: ?>
+              <li class="nav-item">
+                <a href="login.php" target="_self" class="nav-link active grow-up">Login</a>
+              </li>
+              <?php endif ?>
           </ul>
         </div>
         <!-- Search -->
@@ -83,29 +93,13 @@
       </div>
     </div>
     <!-- Fim das Boas-vindas -->
-
-    <div class="container-fluid">
-      <div class="row justify-content-around">
-        <!-- Card 01 -->
-        <div class="col-md-5 moldura" id="inicio">
-          <div class="card" style="max-width: 540px;">
-
-          </div>
-
-          <!-- Texto Abaixo -->
-          <h1>H1</h1>
-        </div>
-        <div class="col-md-5 moldura">
-          <h1 class="text-center">Hello</h1>
-        </div>
-      </div>
-    </div>
+   
 
     <div class="container-fluid mt-3">
       <div class="row justify-content-around">
         <!-- Card 03 -->
-        <div class="col-lg-4 mb-3">
-          <div class="card" style="width: 40vw;">
+        <div class="col-lg-6 mb-3">
+          <div class="card">
             <img src="img/medicos.jpg" class="card-img-top" alt="Nossa equipe" title="Profissionais da saúde">
             <div class="card-body">
               <h4 class="card-title lead">Nossos Especialistas</h4>
@@ -118,8 +112,8 @@
         <!-- Card 03 - End -->
         
         <!-- Card 04 -->
-        <div class="col-lg-4 mb-3">
-          <div class="card" style="width: 40vw;">
+        <div class="col-lg-6 mb-3">
+          <div class="card">
             <img src="img/adm.jpg" class="card-img-top" alt="Administradores da Página" title="Administradores da Página">
             <div class="card-body">
               <h4 class="card-title lead">Administração da página</h4>
