@@ -2,11 +2,10 @@
 require_once '../banco_de_dados.php';
 $con = (new DBConnect())->getConn();
 
-$redatores = $con->prepare('SELECT * FROM redator')->fetchAll();
-
-$artigos = $con->query('SELECT 
-    administrador.login as adminstradorNome, artigo.* 
-    FROM artigo 
+$redatoresStmt = $con->prepare('SELECT * FROM redator')->fetchAll();
+$artigos = $con->query('SELECT
+    administrador.login as adminstradorNome, artigo.*
+    FROM artigo
     LEFT JOIN administrador ON artigo.FK_Administrador_ID = administrador.id')->fetchAll();
 ?>
 
