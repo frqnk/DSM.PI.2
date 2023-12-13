@@ -167,223 +167,99 @@ session_start();
 
     <hr class="border border-sucess border-2 opacity-75">
 
-    <!-- Feed -->
-    <div class="container" id="feed">
-      <div class="row">
-        <h1 class="lead display-4 text-center bg-secondary text-light border-0 rounded-2" style="font-family: sans-serif;">Feed</h1>
-        <!-- Carousel -->
-        <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-theme="dark">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/SLIDE1.jpg" class="d-block w-100 carousel-img" alt="Primeiro Slide">
-            </div>
-            <div class="carousel-item">
-              <img src="img/SLIDE2.jpg" class="d-block w-100 carousel-img" alt="Segundo Slide">
-            </div>
-            <div class="carousel-item">
-              <img src="img/SLIDE3.jpg" class="d-block w-100 carousel-img" alt="Terceiro Slide">
-            </div>
-            <div class="carousel-item">
-              <img src="img/SLIDE4.jpg" class="d-block w-100 carousel-img" alt="Quarto Slide">
-            </div>
-            <div class="carousel-item">
-              <img src="img/SLIDE5.jpg" class="d-block w-100 carousel-img" alt="Quinto Slide">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" title="Anterior" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" title="Próximo" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Próximo</span>
-          </button>
-        </div> -->
-        <!-- Carousel - End -->
-        <!-- Post 01 -->
-        <div class="post">
-          <div class="user">
-            <h2><img class="perfilImg" src="img/feed/user1.png" alt="imagem de perfil">Alexandra Magalhães</h2>
-            <figcaption class="text-dark-emphasis fw-lighter">02/01/2023</figcaption>
-            <div class="userText">
-              <h4>Como se manter saudável no verão: dicas de hidratação, alimentação e proteção solar</h4>
-              <p class="fw-normal">
-                O verão é uma estação do ano que muitas pessoas adoram, pois é sinônimo de férias, praia, piscina e diversão.
-                No entanto, também é uma época que exige alguns cuidados especiais com a saúde, pois as altas temperaturas,
-                a exposição ao sol e a transpiração podem causar desidratação, queimaduras, insolação e outros problemas. Por
-                isso, é importante seguir algumas dicas para se manter saudável no verão e aproveitar ao máximo essa estação.
+<!-- Feed -->
+<div class="container" id="feed">
+  <div class="row">
+    <h1 class="lead display-4 text-center bg-secondary text-light border-0 rounded-2" style="font-family: sans-serif;">Feed</h1>
 
-                <h3>Hidratação</h3>
-
-                A hidratação é fundamental para o bom funcionamento do organismo, pois ajuda a regular a temperatura
-                corporal, a eliminar toxinas, a transportar nutrientes e a prevenir infecções. No verão, a necessidade de água
-                aumenta, pois perdemos mais líquidos e sais minerais através do suor. Por isso, é recomendado beber pelo
-                menos 2 litros de água por dia, ou mais, dependendo da atividade física e do clima. Além da água, também é
-                possível se hidratar com sucos naturais, água de coco, chás gelados e frutas ricas em água, como melancia,
-                melão, abacaxi e laranja.
-
-                <h3>Alimentação</h3>
-
-                A alimentação também deve ser adaptada ao verão, pois o calor e a digestão podem causar mal-estar, cansaço e
-                sonolência. Por isso, é aconselhável optar por refeições leves, frescas e nutritivas, que forneçam energia e
-                hidratação ao corpo. Algumas dicas são:
-                <ul>
-                  <li>
-                    Evitar alimentos gordurosos, frituras, embutidos, molhos e condimentos, pois eles dificultam a digestão e podem causar azia, gastrite e refluxo.
-                  </li>
-
-                  <li>
-                    Preferir alimentos ricos em fibras, vitaminas, minerais e antioxidantes, como frutas, verduras, legumes, cereais integrais e oleaginosas, pois eles ajudam a regular o intestino, a fortalecer o sistema imunológico
-                    e a prevenir o envelhecimento precoce da pele.
-                  </li>
-
-                  <li>
-                    Consumir alimentos fontes de proteínas magras, como peixes, frango, ovos, queijo branco e iogurte, pois eles contribuem para a manutenção da massa muscular e da saciedade.
-                  </li>
-
-                  <li>
-                    Evitar o consumo excessivo de bebidas alcoólicas, refrigerantes, energéticos e café, pois eles podem causar desidratação, alterar a pressão arterial e prejudicar o sono.
-                  </li>
-                </ul>
-
-                <h4>Proteção solar</h4>
-
-                A proteção solar é essencial para evitar os danos causados pelos raios ultravioleta (UV), que podem provocar
-                queimaduras, manchas, rugas, flacidez e até câncer de pele. Por isso, é importante seguir algumas medidas de
-                proteção, como:
-                e Usar protetor solar diariamente, com fator de proteção solar (FPS) adequado ao seu tipo de pele, e
-                reaplicá-lo a cada duas horas ou sempre que suar, nadar ou se secar com a toalha.
-                e Evitar a exposição ao sol entre as 10h e as 16h, quando os raios UV são mais intensos e nocivos.
-                e Usar chapéu, óculos de sol, camiseta e guarda-sol para aumentar a proteção contra o sol.
-                e Hidratar a pele após a exposição ao sol, com cremes ou loções que contenham aloe vera, camomila ou
-                calêndula, pois eles ajudam a acalmar, refrescar e regenerar a pele.
-                Seguindo essas dicas, você poderá se manter saudável no verão e curtir essa estação com mais saúde e bemestar. Lembre-se de que a saúde é o seu maior patrimônio e que você deve cuidar dela em todas as épocas do
-                ano.
-              </p>
-              <img src="img/feed/post1.jpg" class="postImg">
-            </div>
-          </div>
-      </div>
-      <!-- Post 02 -->
-      <div class="post">
-          <div class="user">
-            <h2><img class="perfilImg" src="img/feed/user2.png" alt="imagem de perfil">Alice Bertran</h2>
-            <figcaption class="text-dark-emphasis fw-lighter">05/03/2023</figcaption>
-            <div class="userText">
-              <p><h3>Produção orgânica: o que é, quais são os benefícios
-                e como escolher produtos orgânicos de qualidade.</h3>
-
-                A produção orgânica é uma forma de agricultura que busca produzir alimentos saudáveis, sem o uso de agrotóxicos, fertilizantes sintéticos ou organismos geneticamente modificados. A produção orgânica também visa preservar os recursos naturais, a biodiversidade, o equilíbrio ecológico e a qualidade de vida dos produtores e consumidores.
-
-                <h3>Quais são os benefícios da produção orgânica?</h3>
-
-                A produção orgânica traz diversos benefícios para o meio ambiente, para a saúde e para a economia. Alguns desses benefícios são:
-
-                <ul>
-                  <li>
-                    <span class="fw-bold">Meio ambiente:</span> a produção orgânica contribui para a conservação do solo, da água, da flora e da fauna,
-                    evitando a contaminação por substâncias químicas, a erosão, o desperdício e a perda de biodiversidade.
-                    A produção orgânica também utiliza técnicas que favorecem o aproveitamento dos recursos naturais,
-                    como a compostagem, a rotação de culturas, o uso de energias renováveis e a integração entre lavoura,
-                    pecuária e floresta.
-                  </li>
-
-                  <li>
-                    <span class="fw-bold">Saúde:</span> a produção orgânica oferece alimentos mais nutritivos, saborosos e seguros, livres de resíduos tóxicos que podem causar alergias, intoxicações, doenças crônicas e câncer. A produção orgânica também promove a saúde dos trabalhadores rurais, que não ficam expostos aos agrotóxicos e têm melhores condições de trabalho.
-                  </li>
-
-                  <li>
-                    <span class="fw-bold">Economia:</span> a produção orgânica gera renda e emprego para os agricultores familiares, que são os
-                    principais responsáveis pela produção orgânica no Brasil. A produção orgânica também estimula o  desenvolvimento local, o comércio justo, a soberania alimentar e a valorização da cultura e do
-                    conhecimento tradicional.
-                  </li>
-                </ul>
-
-
-
-                <h3>Como escolher produtos orgânicos de qualidade?</h3>
-
-                Para escolher produtos orgânicos de qualidade, é importante verificar se eles possuem algum selo ou
-                certificado que comprove que foram produzidos de acordo com as normas da produção orgânica. No Brasil,
-                existe o Selo do Sistema Brasileiro de Avaliação da Conformidade Orgânica (SisOrg), que identifica os
-                produtos orgânicos que foram fiscalizados por um organismo credenciado pelo Ministério da Agricultura,
-                Pecuária e Abastecimento (Mapa). O Selo do SisOrg pode ser encontrado em produtos orgânicos de origem
-                vegetal ou animal, processados ou não, nacionais ou importados.
-
-                <br clear="all">
-
-                Outra forma de escolher produtos orgânicos de qualidade é comprar diretamente dos produtores orgânicos, em
-                feiras, mercados, lojas ou entregas domiciliares. Nesses casos, os produtos orgânicos podem não ter o Selo do
-                SisOrg, mas devem ter uma declaração de conformidade orgânica emitida por uma organização de controle
-                social (OCS) cadastrada no Mapa. A OCS é um grupo de produtores e consumidores que se comprometem a
-                seguir os princípios e as normas da produção orgânica e a garantir a qualidade dos produtos orgânicos que
-                comercializam.
-
-                <br clear="all">
-
-                Além disso, é importante observar as características dos produtos orgânicos, como a aparência, a cor, o aroma,
-                o sabor e a textura. Os produtos orgânicos podem apresentar variações de tamanho, forma e cor, de acordo com
-                as condições climáticas, o solo e a variedade da planta ou do animal. Os produtos orgânicos também podem ter
-                pequenos defeitos, como manchas, perfurações ou mordidas, que indicam que não foram tratados com
-                agrotóxicos ou outros produtos químicos. Os produtos orgânicos devem ter um aroma e um sabor mais intensos
-                e naturais, que refletem a sua qualidade nutricional e sensorial.
-
-                <h3>Conclusão<h3>
-
-                A produção orgânica é uma alternativa sustentável, saudável e econômica para a produção de alimentos. A
-                produção orgânica beneficia o meio ambiente, a saúde e a economia, além de valorizar a cultura e o
-                conhecimento dos agricultores familiares. Para escolher produtos orgânicos de qualidade, é importante
-                verificar se eles possuem algum selo ou certificado que comprove a sua origem orgânica, ou se eles são
-                provenientes de produtores orgânicos confiáveis. Também é importante observar as características dos
-                produtos orgânicos, que devem ter uma aparência, uma cor, um aroma, um sabor e uma textura naturais e
-                variados.
-
-                <h3>Referências</h3>
-
-                <a href="#">: Agroecologia e produção orgânica - Portal Embrapa</a>
-                <br clear="all">
-                <a href="#">: Agricultura Orgânica: o que é, vantagens e desvantagens - Toda Matéria</a>
-                <br clear="all">
-                <a href="#">: Modo de Produção: Orgânicos - Sustentarea</a>
-                <br clear="all">
-                <a href="#">: Agricultura orgânica - Portal Embrapa</a></p>
-                <img src="img/feed/post3.jpg" class="postImg">
-            </div>
-          </div>
-      </div>
-      <!-- Post 03 -->
-      <!-- <div class="post">
-        <div class="user">
-          <h2><img class="perfilImg" src="img/feed/user3.png" alt="imagem de perfil">Pedro Alves</h2>
-          <figcaption class="text-dark-emphasis fw-lighter">21/05/2023</figcaption>
-          <div class="userText">
-            <p>Este é outro post de exemplo no feed da rede social.</p>
-          </div>
-        </div>
-    </div>
+    <!-- Post 01 -->
     <div class="post">
       <div class="user">
-        <h2><img class="perfilImg" src="img/feed/user4.png" alt="imagem de perfil">Brenda Lima</h2>
-        <figcaption class="text-dark-emphasis fw-lighter">03/06/2023</figcaption>
+        <h2><img class="perfilImg" src="img/feed/user1.png" alt="imagem de perfil">Alexandra Magalhães</h2>
+        <figcaption class="text-dark-emphasis fw-lighter">02/01/2023</figcaption>
         <div class="userText">
-          <p>Este é outro post de exemplo no feed da rede social.</p>
+          <h4>Como se manter saudável no verão: dicas de hidratação, alimentação e proteção solar</h4>
+          <p class="fw-normal">
+            O verão é uma estação do ano que muitas pessoas adoram, pois é sinônimo de férias, praia, piscina e diversão. No entanto, também é uma época que exige alguns cuidados especiais com a saúde, pois as altas temperaturas, a exposição ao sol e a transpiração podem causar desidratação, queimaduras, insolação e outros problemas. Por isso, é importante seguir algumas dicas para se manter saudável no verão e aproveitar ao máximo essa estação.
+
+            <h3>Hidratação</h3>
+            A hidratação é fundamental para o bom funcionamento do organismo, pois ajuda a regular a temperatura corporal, a eliminar toxinas, a transportar nutrientes e a prevenir infecções. No verão, a necessidade de água aumenta, pois perdemos mais líquidos e sais minerais através do suor. Por isso, é recomendado beber pelo menos 2 litros de água por dia, ou mais, dependendo da atividade física e do clima. Além da água, também é possível se hidratar com sucos naturais, água de coco, chás gelados e frutas ricas em água, como melancia, melão, abacaxi e laranja.
+
+            <h3>Alimentação</h3>
+            A alimentação também deve ser adaptada ao verão, pois o calor e a digestão podem causar mal-estar, cansaço e sonolência. Por isso, é aconselhável optar por refeições leves, frescas e nutritivas, que forneçam energia e hidratação ao corpo. Algumas dicas são:
+            <ul>
+              <li>Evitar alimentos gordurosos, frituras, embutidos, molhos e condimentos, pois eles dificultam a digestão e podem causar azia, gastrite e refluxo.</li>
+              <li>Preferir alimentos ricos em fibras, vitaminas, minerais e antioxidantes, como frutas, verduras, legumes, cereais integrais e oleaginosas, pois eles ajudam a regular o intestino, a fortalecer o sistema imunológico e a prevenir o envelhecimento precoce da pele.</li>
+              <li>Consumir alimentos fontes de proteínas magras, como peixes, frango, ovos, queijo branco e iogurte, pois eles contribuem para a manutenção da massa muscular e da saciedade.</li>
+              <li>Evitar o consumo excessivo de bebidas alcoólicas, refrigerantes, energéticos e café, pois eles podem causar desidratação, alterar a pressão arterial e prejudicar o sono.</li>
+            </ul>
+
+            <h4>Proteção solar</h4>
+            A proteção solar é essencial para evitar os danos causados pelos raios ultravioleta (UV), que podem provocar queimaduras, manchas, rugas, flacidez e até câncer de pele. Por isso, é importante seguir algumas medidas de proteção, como:
+            <ul>
+              <li>Usar protetor solar diariamente, com fator de proteção solar (FPS) adequado ao seu tipo de pele, e reaplicá-lo a cada duas horas ou sempre que suar, nadar ou se secar com a toalha.</li>
+              <li>Avoid exposure to the sun between 10 a.m. and 4 p.m., when UV rays are more intense and harmful.</li>
+              <li>Use hat, sunglasses, t-shirt, and umbrella to increase protection against the sun.</li>
+              <li>Hydrate the skin after sun exposure, with creams or lotions that contain aloe vera, chamomile or calendula, as they help soothe, refresh and regenerate the skin.</li>
+            </ul>
+
+            Seguindo essas dicas, você poderá se manter saudável no verão e curtir essa estação com mais saúde e bem-estar. Lembre-se de que a saúde é o seu maior patrimônio e que você deve cuidar dela em todas as épocas do ano.
+          </p>
+          <img src="img/feed/post1.jpg" class="postImg">
         </div>
       </div>
     </div>
+    <!-- Post 01 - End -->
+
+    <!-- Post 02 -->
+    <div class="post">
+      <div class="user">
+        <h2><img class="perfilImg" src="img/feed/user2.png" alt="imagem de perfil">Alice Bertran</h2>
+        <figcaption class="text-dark-emphasis fw-lighter">05/03/2023</figcaption>
+        <div class="userText">
+          <h3>Produção orgânica: o que é, quais são os benefícios e como escolher produtos orgânicos de qualidade.</h3>
+          <p>
+            A produção orgânica é uma forma de agricultura que busca produzir alimentos saudáveis, sem o uso de agrotóxicos, fertilizantes sintéticos ou organismos geneticamente modificados. A produção orgânica também visa preservar os recursos naturais, a biodiversidade, o equilíbrio ecológico e a qualidade de vida dos produtores e consumidores.
+
+            <h3>Quais são os benefícios da produção orgânica?</h3>
+            A produção orgânica traz diversos benefícios para o meio ambiente, para a saúde e para a economia. Alguns desses benefícios são:
+            <ul>
+              <li><span class="fw-bold">Meio ambiente:</span> a produção orgânica contribui para a conservação do solo, da água, da flora e da fauna, evitando a contaminação por substâncias químicas, a erosão, o desperdício e a perda de biodiversidade. A produção orgânica também utiliza técnicas que favorecem o aproveitamento dos recursos naturais, como a compostagem, a rotação de culturas, o uso de energias renováveis e a integração entre lavoura, pecuária e floresta.</li>
+              <li><span class="fw-bold">Saúde:</span> a produção orgânica oferece alimentos mais nutritivos, saborosos e seguros, livres de resíduos tóxicos que podem causar alergias, intoxicações, doenças crônicas e câncer. A produção orgânica também promove a saúde dos trabalhadores rurais, que não ficam expostos aos agrotóxicos e têm melhores condições de trabalho.</li>
+              <li><span class="fw-bold">Economia:</span> a produção orgânica gera renda e emprego para os agricultores familiares, que são os principais responsáveis pela produção orgânica no Brasil. A produção orgânica também estimula o desenvolvimento local, o comércio justo, a soberania alimentar e a valorização da cultura e do conhecimento tradicional.</li>
+            </ul>
+
+            <h3>Como escolher produtos orgânicos de qualidade?</h3>
+            Para escolher produtos orgânicos de qualidade, é importante verificar se eles possuem algum selo ou certificado que comprove que foram produzidos de acordo com as normas da produção orgânica. No Brasil, existe o Selo do Sistema Brasileiro de Avaliação da Conformidade Orgânica (SisOrg), que identifica os produtos orgânicos que foram fiscalizados por um organismo credenciado pelo Ministério da Agricultura, Pecuária e Abastecimento (Mapa). O Selo do SisOrg pode ser encontrado em produtos orgânicos de origem vegetal ou animal, processados ou não, nacionais ou importados.
+
+            Outra forma de escolher produtos orgânicos de qualidade é comprar diretamente dos produtores orgânicos, em feiras, mercados, lojas ou entregas domiciliares. Nesses casos, os produtos orgânicos podem não ter o Selo do SisOrg, mas devem ter uma declaração de conformidade orgânica emitida por uma organização de controle social (OCS) cadastrada no Mapa. A OCS é um grupo de produtores e consumidores que se comprometem a seguir os princípios e as normas da produção orgânica e a garantir a qualidade dos produtos orgânicos que comercializam.
+
+            Além disso, é importante observar as características dos produtos orgânicos, como a aparência, a cor, o aroma, o sabor e a textura. Os produtos orgânicos podem apresentar variações de tamanho, forma e cor, de acordo com as condições climáticas, o solo e a variedade da planta ou do animal. Os produtos orgânicos também podem ter pequenos defeitos, como manchas, perfurações ou mordidas, que indicam que não foram tratados com agrotóxicos ou outros produtos químicos. Os produtos orgânicos devem ter um aroma e um sabor mais intensos e naturais, que refletem a sua qualidade nutricional e sensorial.
+
+            <h3>Conclusão</h3>
+            A produção orgânica é uma alternativa sustentável, saudável e econômica para a produção de alimentos. A produção orgânica beneficia o meio ambiente, a saúde e a economia, além de valorizar a cultura e o conhecimento dos agricultores familiares. Para escolher produtos orgânicos de qualidade, é importante verificar se eles possuem algum selo ou certificado que comprove a sua origem orgânica, ou se eles são provenientes de produtores orgânicos confiáveis. Também é importante observar as características dos produtos orgânicos, que devem ter uma aparência, uma cor, um aroma, um sabor e uma textura naturais e variados.
+
+            <h3>Referências</h3>
+            <a href="#">Agroecologia e produção orgânica - Portal Embrapa</a>
+            <br>
+            <a href="#">Agricultura Orgânica: o que é, vantagens e desvantagens - Toda Matéria</a>
+            <br>
+            <a href="#">Modo de Produção: Orgânicos - Sustentarea</a>
+            <br>
+            <a href="#">Agricultura orgânica - Portal Embrapa</a>
+          </p>
+          <img src="img/feed/post3.jpg" class="postImg">
+        </div>
       </div>
-    </div> -->
+    </div>
+    <!-- Post 02 - End -->
 
     <div class="container">
       <button type="button" class="btn btn-success rounded-pill ">Veja mais</button>
     </div>
     <!-- Feed - End -->
+  </div>
+</div>
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white mt-5">
