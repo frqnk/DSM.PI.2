@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12/12/2023 às 04:28
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Tempo de geração: 15/12/2023 às 01:45
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,16 +18,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: technobroccoli
+-- Banco de dados: `tecnobroccoli`
 --
+CREATE DATABASE IF NOT EXISTS `tecnobroccoli` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `tecnobroccoli`;
 
 DELIMITER $$
 --
 -- Procedimentos
 --
-CREATE DEFINER=root@localhost PROCEDURE InserirRedator (IN p_Senha VARCHAR(50), IN p_Login VARCHAR(50))   BEGIN
-    INSERT INTO Redator (Senha, Login)
-    VALUES (p_Senha, p_Login);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InserirRedator` (IN `p_Senha` VARCHAR(50), IN `p_Login` VARCHAR(50))   BEGIN
+  INSERT INTO Redator (Senha, Login)
+  VALUES (p_Senha, p_Login);
 END$$
 
 DELIMITER ;
@@ -35,140 +37,127 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela administrador
+-- Estrutura para tabela `administrador`
 --
 
-CREATE TABLE administrador (
-  ID int(11) NOT NULL AUTO_INCREMENT,
-  login varchar(50) DEFAULT NULL,
-  senha varchar(50) DEFAULT NULL
-)
+CREATE TABLE `administrador` (
+  `ID` int(11) NOT NULL,
+  `login` varchar(50) DEFAULT NULL,
+  `senha` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela artigo
+-- Estrutura para tabela `artigo`
 --
 
-CREATE TABLE artigo (
-  ID int(11)PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  nomeRedator varchar(50) DEFAULT NULL,
-  nomeArtigo varchar(100) DEFAULT NULL,
-  dataPublicacao date DEFAULT NULL,
-  dataAlteracao date DEFAULT NULL,
-  FK_Administrador_ID int(11) DEFAULT NULL
-)
-
--- --------------------------------------------------------
+CREATE TABLE `artigo` (
+  `ID` int(11) NOT NULL,
+  `nomeRedator` varchar(50) DEFAULT NULL,
+  `nomeArtigo` varchar(100) DEFAULT NULL,
+  `dataPublicacao` date DEFAULT NULL,
+  `dataAlteracao` date DEFAULT NULL,
+  `FK_Administrador_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Estrutura para tabela mostrarartigo
+-- Despejando dados para a tabela `artigo`
 --
 
-CREATE TABLE mostrarartigo (
-  ID int(11) NOT NULL AUTO_INCREMENT,
-  FK_redator_ID int(11) DEFAULT NULL,
-  FK_administrador_ID int(11) DEFAULT NULL
-)
-
--- --------------------------------------------------------
+INSERT INTO `artigo` (`ID`, `nomeRedator`, `nomeArtigo`, `dataPublicacao`, `dataAlteracao`, `FK_Administrador_ID`) VALUES
+(2, '', 'TEste3', '2023-12-03', '2023-12-14', 0),
+(3, '', 'teste', '2023-12-03', '2023-12-14', 0);
 
 --
--- Estrutura para tabela redator
---
-
-CREATE TABLE redator (
-  ID int(11) NOT NULL AUTO_INCREMENT,
-  senha varchar(50) DEFAULT NULL,
-  login varchar(50) DEFAULT NULL
-)
-
---
--- Acionadores redator
+-- Acionadores `artigo`
 --
 DELIMITER $$
-CREATE TRIGGER AtualizarDataAlteracao AFTER INSERT ON redator FOR EACH ROW BEGIN
-    UPDATE Artigo
-    SET DataAlteracao = NOW()
-    WHERE NomeRedator = NEW.Login;
-END $$
+CREATE TRIGGER `before_update_artigo` BEFORE UPDATE ON `artigo` FOR EACH ROW BEGIN
+SET NEW.DataAlteracao = NOW();
+END
+$$
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `mostrarartigo`
+--
+
+CREATE TABLE `mostrarartigo` (
+  `ID` int(11) NOT NULL,
+  `FK_redator_ID` int(11) DEFAULT NULL,
+  `FK_administrador_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `redator`
+--
+
+CREATE TABLE `redator` (
+  `ID` int(11) NOT NULL,
+  `senha` varchar(50) DEFAULT NULL,
+  `login` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela administrador
+-- Índices de tabela `administrador`
 --
-ALTER TABLE administrador
-  ADD PRIMARY KEY (ID);
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Índices de tabela artigo
+-- Índices de tabela `artigo`
 --
-ALTER TABLE artigo
-  ADD PRIMARY KEY (ID),
-  ADD KEY FK_Administrador_ID (FK_Administrador_ID);
+ALTER TABLE `artigo`
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Índices de tabela mostrarartigo
+-- Índices de tabela `mostrarartigo`
 --
-ALTER TABLE mostrarartigo
-  ADD PRIMARY KEY (ID),
-  ADD KEY FK_redator_ID (FK_redator_ID),
-  ADD KEY FK_administrador_ID (FK_administrador_ID);
+ALTER TABLE `mostrarartigo`
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Índices de tabela redator
+-- Índices de tabela `redator`
 --
-ALTER TABLE redator
-  ADD PRIMARY KEY (ID);
+ALTER TABLE `redator`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela administrador
+-- AUTO_INCREMENT de tabela `administrador`
 --
-ALTER TABLE administrador
-  MODIFY ID int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `administrador`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela artigo
+-- AUTO_INCREMENT de tabela `artigo`
 --
-ALTER TABLE artigo
-  MODIFY ID int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `artigo`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de tabela mostrarartigo
+-- AUTO_INCREMENT de tabela `mostrarartigo`
 --
-ALTER TABLE mostrarartigo
-  MODIFY ID int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `mostrarartigo`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela redator
+-- AUTO_INCREMENT de tabela `redator`
 --
-ALTER TABLE redator
-  MODIFY ID int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas artigo
---
-ALTER TABLE artigo
-  ADD CONSTRAINT artigo_ibfk_1 FOREIGN KEY (FK_Administrador_ID) REFERENCES administrador (ID);
-
---
--- Restrições para tabelas mostrarartigo
---
-ALTER TABLE mostrarartigo
-  ADD CONSTRAINT mostrarartigo_ibfk_1 FOREIGN KEY (FK_redator_ID) REFERENCES redator (ID),
-  ADD CONSTRAINT mostrarartigo_ibfk_2 FOREIGN KEY (FK_administrador_ID) REFERENCES administrador (ID);
+ALTER TABLE `redator`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
